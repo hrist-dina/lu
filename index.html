@@ -8,15 +8,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="./pic/icon.png" rel="shortcut icon">
 	<link href="./css/plugins/jquery.jscrollpane.css" rel="stylesheet">
+	<link href="./css/plugins/select2.min.css" rel="stylesheet" />
 	<link href="./styles.css" rel="stylesheet">
 	<link href="./css/styles10.css" rel="stylesheet">
 	<link href="./css/letsrock.css" rel="stylesheet">
-
 
 	<script src="./js/jquery.js"></script>
 	<script src="./js/slick.min.js"></script>
 	<script src="./js/jquery.jscrollpane.min.js"></script>
 	<script src="./js/jquery.mousewheel.js"></script>
+	<script src="./js/select2.min.js"></script>
 	<!--[if IE 8]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<script src="./js/ie8.js"></script>
@@ -69,53 +70,141 @@
 		<a href="/personal/cart/">В корзине</a> 3 товара		<br> на сумму <strong>639</strong> руб.
 	</p>
 	<div class="basket__fly">
-		<a class="basket__order" href="/personal/cart/">Оформить заказ</a>
-		<button class="basket__clear clear_fn">Очистить корзину</button>
-		<ul class="basket__items" style='opacity: 0'>
+		<ul class="basket__items js-basket-scroll" style='opacity: 0'>
 							
-            			<li class="b-item" data-prodid="5677">
-							<div class="b-item__img">
-								<img src="/upload/b9e9350a174f886ac7735cbb46d5a76a.jpg" alt="Повязка на голову из шерсти яка" title="Повязка на голову из шерсти яка">
-							</div>
-							<div class="b-item__counter" data-q="1" data-id="370165">
-								<button class="b-item__counter-plus"  ></button>
-								<button class="b-item__counter-minus" ></button>
-							</div>
-							<div class="b-item__res">
-								<strong>400  Р</strong><br>
-								<span>1 шт.</span>
-							</div>
-						</li>						
-									
-            			<li class="b-item" data-prodid="5277">
-							<div class="b-item__img">
-								<img src="./upload/7766529cd41e2ea7161d1ae1eb1563fa.jpg" alt="Хлебцы льняные с сушеным луком &quot;Соленые&quot;" title="Хлебцы льняные с сушеным луком &quot;Соленые&quot;">
-							</div>
-							<div class="b-item__counter" data-q="1" data-id="370166">
-								<button class="b-item__counter-plus"  ></button>
-								<button class="b-item__counter-minus" ></button>
-							</div>
-							<div class="b-item__res">
-								<strong>119  Р</strong><br>
-								<span>1 шт.</span>
+						<li class="b-item" data-prodid="5677">
+							<a href="#" class="b-item__title">Повязка на голову из шерсти яка</a>
+							<div class="b-item__content">
+								<div class="b-item__img">
+									<img src="/upload/b9e9350a174f886ac7735cbb46d5a76a.jpg" alt="Повязка на голову из шерсти яка" title="Повязка на голову из шерсти яка">
+								</div>
+								<div class="b-item__center">
+									<div class="b-item__counter" data-q="1" data-id="370165">
+										<button class="b-item__counter-plus"  ></button>
+										<input class="b-item__counter-quantity" name="quantity" type="text" value="54">
+										<button class="b-item__counter-minus" ></button>
+									</div>
+									<div class="b-item__res">
+										<strong>3000 ₽</strong><br>
+									</div>
+								</div>
+								<a href="#" class="b-item__remove"></a>
 							</div>
 						</li>						
-									
-            			<li class="b-item" data-prodid="7640">
-							<div class="b-item__img">
-								<img src="./upload/325db0b2b90eaf64ab09d6705af73f86.jpg" alt="Носки в банке &quot;НЗ&quot;" title="Носки в банке &quot;НЗ&quot;">
+							
+						<li class="b-item" data-prodid="5277">
+							<a href="#" class="b-item__title">Хлебцы льняные с сушеным луком &quot;Соленые&quot;</a>
+							<div class="b-item__content">
+								<div class="b-item__img">
+									<img src="./upload/7766529cd41e2ea7161d1ae1eb1563fa.jpg" alt="Хлебцы льняные с сушеным луком &quot;Соленые&quot;" title="Хлебцы льняные с сушеным луком &quot;Соленые&quot;">
+								</div>
+								<div class="b-item__center">
+									<div class="b-item__counter" data-q="1" data-id="370165">
+										<button class="b-item__counter-plus"  ></button>
+										<input class="b-item__counter-quantity" name="quantity" type="text" value="4">
+										<button class="b-item__counter-minus" ></button>
+									</div>
+									<div class="b-item__res">
+										<strong>119 ₽</strong><br>
+									</div>
+								</div>
+								<a href="#" class="b-item__remove"></a>
 							</div>
-							<div class="b-item__counter" data-q="1" data-id="370167">
-								<button class="b-item__counter-plus"  ></button>
-								<button class="b-item__counter-minus" ></button>
+						</li>
+					
+						<li class="b-item" data-prodid="7640">
+							<a href="#" class="b-item__title">Носки в банке &quot;НЗ&quot;</a>
+							<div class="b-item__size">
+								<span>Размер</span>
+								<select class="js-select">
+									<option value="33_51">35-36 (35-37)</option>
+									<option value="33_53">37-39 (38-40)</option>
+									<option value="33_56">40-42 (41-43)</option>
+									<option value="33_59">43-45 (44-46)</option>
+								</select>
 							</div>
-							<div class="b-item__res">
-								<strong>120  Р</strong><br>
-								<span>1 шт.</span>
+							<div class="b-item__content">
+								<div class="b-item__img">
+									<img src="./upload/325db0b2b90eaf64ab09d6705af73f86.jpg" alt="Носки в банке &quot;НЗ&quot;" title="Носки в банке &quot;НЗ&quot;">
+								</div>
+								<div class="b-item__center">
+									<div class="b-item__counter" data-q="1" data-id="370165">
+										<button class="b-item__counter-plus"  ></button>
+										<input class="b-item__counter-quantity" name="quantity" type="text" value="1">
+										<button class="b-item__counter-minus" ></button>
+									</div>
+									<div class="b-item__res">
+										<strong>119 ₽</strong><br>
+									</div>
+								</div>
+								<a href="#" class="b-item__remove"></a>
 							</div>
-						</li>						
+						</li>	
+            							
+						<li class="b-item" data-prodid="7640">
+							<a href="#" class="b-item__title">Носки в банке &quot;НЗ&quot;</a>
+							<div class="b-item__content">
+								<div class="b-item__img">
+									<img src="./upload/325db0b2b90eaf64ab09d6705af73f86.jpg" alt="Носки в банке &quot;НЗ&quot;" title="Носки в банке &quot;НЗ&quot;">
+								</div>
+								<div class="b-item__center">
+									<div class="b-item__counter" data-q="1" data-id="370165">
+										<button class="b-item__counter-plus"  ></button>
+										<input class="b-item__counter-quantity" name="quantity" type="text" value="1">
+										<button class="b-item__counter-minus" ></button>
+									</div>
+									<div class="b-item__res">
+										<strong>119 ₽</strong><br>
+									</div>
+								</div>
+								<a href="#" class="b-item__remove"></a>
+							</div>
+						</li>
+
+						<li class="b-item" data-prodid="7640">
+							<a href="#" class="b-item__title">Носки в банке &quot;НЗ&quot;</a>
+							<div class="b-item__content">
+								<div class="b-item__img">
+									<img src="./upload/325db0b2b90eaf64ab09d6705af73f86.jpg" alt="Носки в банке &quot;НЗ&quot;" title="Носки в банке &quot;НЗ&quot;">
+								</div>
+								<div class="b-item__center">
+									<div class="b-item__counter" data-q="1" data-id="370165">
+										<button class="b-item__counter-plus"  ></button>
+										<input class="b-item__counter-quantity" name="quantity" type="text" value="1">
+										<button class="b-item__counter-minus" ></button>
+									</div>
+									<div class="b-item__res">
+										<strong>119 ₽</strong><br>
+									</div>
+								</div>
+								<a href="#" class="b-item__remove"></a>
+							</div>
+						</li>	
+						<li class="b-item" data-prodid="7640">
+							<a href="#" class="b-item__title">Носки в банке &quot;НЗ&quot;</a>
+							<div class="b-item__content">
+								<div class="b-item__img">
+									<img src="./upload/325db0b2b90eaf64ab09d6705af73f86.jpg" alt="Носки в банке &quot;НЗ&quot;" title="Носки в банке &quot;НЗ&quot;">
+								</div>
+								<div class="b-item__center">
+									<div class="b-item__counter" data-q="1" data-id="370165">
+										<button class="b-item__counter-plus"  ></button>
+										<input class="b-item__counter-quantity" name="quantity" type="text" value="1">
+										<button class="b-item__counter-minus" ></button>
+									</div>
+									<div class="b-item__res">
+										<strong>119 ₽</strong><br>
+									</div>
+								</div>
+								<a href="#" class="b-item__remove"></a>
+							</div>
+						</li>		
 											
 		</ul>
+		<div class="basket__order-wrap">
+			<a class="basket__order" href="/personal/cart/">Перейти к оформлению</a>
+		</div>
+		<button class="basket__clear clear_fn">Очистить корзину</button>
 	</div>
 </div>
 <script>
@@ -196,11 +285,221 @@
 <p>на сумму <strong>639</strong> руб.</p></div>
 
 				</div>
-						<div class="search">
-				<form action="/search/index.php">
-	<input type="text" name="q" value="" size="15" maxlength="50" />
-</form>
-			</div>
+						<div class="search search__show-result">
+							<form action="/search/index.php">
+								<input type="text" name="q" value="" size="15" maxlength="50" />
+							</form>
+							<div class="search__result">
+								<div class="search__result-inner">
+									<ul class="search__items js-basket-scroll">
+										<li class="b-item" data-prodid="5677">
+											<a href="#" class="b-item__title">Повязка на голову из шерсти яка</a>
+											<div class="b-item__content">
+												<div class="b-item__img">
+													<img src="/upload/b9e9350a174f886ac7735cbb46d5a76a.jpg"
+														alt="Повязка на голову из шерсти яка" title="Повязка на голову из шерсти яка">
+												</div>
+												<div class="b-item__center">
+													<div class="b-item__size">
+														<span>Размер</span>
+														<select class="js-select">
+															<option value="33_51">35-36 (35-37)</option>
+															<option value="33_53">37-39 (38-40)</option>
+															<option value="33_56">40-42 (41-43)</option>
+															<option value="33_59">43-45 (44-46)</option>
+														</select>
+													</div>
+													<div class="b-item__res">
+														<span>Ваша цена</span>
+														<span class="strike">3500₽</span>
+														<strong>3000 ₽</strong>
+													</div>
+													<div class="b-item__action">
+														<span>По акции до 30.08.2019</span>
+													</div>
+												</div>
+												<div class="b-item__end">
+													<div class="b-item__counter" data-q="1" data-id="370165">
+														<button class="b-item__counter-plus"></button>
+														<input class="b-item__counter-quantity" name="quantity" type="text" value="54">
+														<button class="b-item__counter-minus"></button>
+													</div>
+													<button onclick="javascript:void(0);" class="b-item__buy">Купить</button>
+												</div>
+											</div>
+										</li>
+										<li class="b-item" data-prodid="5677">
+											<a href="#" class="b-item__title">Хлебцы льняные с сушеным луком "Соленые"</a>
+											<div class="b-item__content">
+												<div class="b-item__img">
+													<img src="/upload/7766529cd41e2ea7161d1ae1eb1563fa.jpg"
+														alt='Хлебцы льняные с сушеным луком "Соленые"' title='Хлебцы льняные с сушеным луком "Соленые"'>
+												</div>
+												<div class="b-item__center">
+													<div class="b-item__size">
+														<span>Размер</span>
+														<select class="js-select">
+															<option value="33_51">35-36 (35-37)</option>
+															<option value="33_53">37-39 (38-40)</option>
+															<option value="33_56">40-42 (41-43)</option>
+															<option value="33_59">43-45 (44-46)</option>
+														</select>
+													</div>
+													<div class="b-item__res">
+														<span>Ваша цена</span>
+														<span class="strike">3500₽</span>
+														<strong>3000 ₽</strong>
+													</div>
+												</div>
+												<div class="b-item__end">
+													<div class="b-item__counter" data-q="1" data-id="370165">
+														<button class="b-item__counter-plus"></button>
+														<input class="b-item__counter-quantity" name="quantity" type="text" value="54">
+														<button class="b-item__counter-minus"></button>
+													</div>
+													<button onclick="javascript:void(0);" class="b-item__buy">Купить</button>
+												</div>
+											</div>
+										</li>
+										<li class="b-item" data-prodid="5677">
+											<a href="#" class="b-item__title">Повязка на голову из шерсти яка</a>
+											<div class="b-item__content">
+												<div class="b-item__img">
+													<img src="/upload/b9e9350a174f886ac7735cbb46d5a76a.jpg"
+														alt="Повязка на голову из шерсти яка" title="Повязка на голову из шерсти яка">
+												</div>
+												<div class="b-item__center">
+													<div class="b-item__size">
+														<span>Размер</span>
+														<select class="js-select">
+															<option value="33_51">35-36 (35-37)</option>
+															<option value="33_53">37-39 (38-40)</option>
+															<option value="33_56">40-42 (41-43)</option>
+															<option value="33_59">43-45 (44-46)</option>
+														</select>
+													</div>
+													<div class="b-item__res">
+														<span>Ваша цена</span>
+														<span class="strike">35000₽</span>
+														<strong>30000 ₽</strong>
+													</div>
+												</div>
+												<div class="b-item__end">
+													<div class="b-item__counter" data-q="1" data-id="370165">
+														<button class="b-item__counter-plus"></button>
+														<input class="b-item__counter-quantity" name="quantity" type="text" value="54">
+														<button class="b-item__counter-minus"></button>
+													</div>
+													<button onclick="javascript:void(0);" class="b-item__buy">Купить</button>
+												</div>
+											</div>
+										</li>
+										<li class="b-item" data-prodid="5677">
+											<a href="#" class="b-item__title">Повязка на голову из шерсти яка</a>
+											<div class="b-item__content">
+												<div class="b-item__img">
+													<img src="/upload/b9e9350a174f886ac7735cbb46d5a76a.jpg"
+														alt="Повязка на голову из шерсти яка" title="Повязка на голову из шерсти яка">
+												</div>
+												<div class="b-item__center">
+													<div class="b-item__size">
+														<span>Размер</span>
+														<select class="js-select">
+															<option value="33_51">35-36 (35-37)</option>
+															<option value="33_53">37-39 (38-40)</option>
+															<option value="33_56">40-42 (41-43)</option>
+															<option value="33_59">43-45 (44-46)</option>
+														</select>
+													</div>
+													<div class="b-item__res">
+														<span>Ваша цена</span>
+														<span class="strike">3500₽</span>
+														<strong>3000 ₽</strong>
+													</div>
+												</div>
+												<div class="b-item__end">
+													<div class="b-item__counter" data-q="1" data-id="370165">
+														<button class="b-item__counter-plus"></button>
+														<input class="b-item__counter-quantity" name="quantity" type="text" value="54">
+														<button class="b-item__counter-minus"></button>
+													</div>
+													<button onclick="javascript:void(0);" class="b-item__buy">Купить</button>
+												</div>
+											</div>
+										</li>
+										<li class="b-item" data-prodid="5677">
+											<a href="#" class="b-item__title">Повязка на голову из шерсти яка</a>
+											<div class="b-item__content">
+												<div class="b-item__img">
+													<img src="/upload/b9e9350a174f886ac7735cbb46d5a76a.jpg"
+														alt="Повязка на голову из шерсти яка" title="Повязка на голову из шерсти яка">
+												</div>
+												<div class="b-item__center">
+													<div class="b-item__size">
+														<span>Размер</span>
+														<select class="js-select">
+															<option value="33_51">35-36 (35-37)</option>
+															<option value="33_53">37-39 (38-40)</option>
+															<option value="33_56">40-42 (41-43)</option>
+															<option value="33_59">43-45 (44-46)</option>
+														</select>
+													</div>
+													<div class="b-item__res">
+														<span>Ваша цена</span>
+														<span class="strike">3500₽</span>
+														<strong>3000 ₽</strong>
+													</div>
+												</div>
+												<div class="b-item__end">
+													<div class="b-item__counter" data-q="1" data-id="370165">
+														<button class="b-item__counter-plus"></button>
+														<input class="b-item__counter-quantity" name="quantity" type="text" value="54">
+														<button class="b-item__counter-minus"></button>
+													</div>
+													<button onclick="javascript:void(0);" class="b-item__buy">Купить</button>
+												</div>
+											</div>
+										</li>
+										<li class="b-item" data-prodid="5677">
+											<a href="#" class="b-item__title">Повязка на голову из шерсти яка</a>
+											<div class="b-item__content">
+												<div class="b-item__img">
+													<img src="/upload/b9e9350a174f886ac7735cbb46d5a76a.jpg"
+														alt="Повязка на голову из шерсти яка" title="Повязка на голову из шерсти яка">
+												</div>
+												<div class="b-item__center">
+													<div class="b-item__size">
+														<span>Размер</span>
+														<select class="js-select">
+															<option value="33_51">35-36 (35-37)</option>
+															<option value="33_53">37-39 (38-40)</option>
+															<option value="33_56">40-42 (41-43)</option>
+															<option value="33_59">43-45 (44-46)</option>
+														</select>
+													</div>
+													<div class="b-item__res">
+														<span>Ваша цена</span>
+														<span class="strike">3500₽</span>
+														<strong>3000 ₽</strong>
+													</div>
+												</div>
+												<div class="b-item__end">
+													<div class="b-item__counter" data-q="1" data-id="370165">
+														<button class="b-item__counter-plus"></button>
+														<input class="b-item__counter-quantity" name="quantity" type="text" value="54">
+														<button class="b-item__counter-minus"></button>
+													</div>
+													<button onclick="javascript:void(0);" class="b-item__buy">Купить</button>
+												</div>
+											</div>
+										</li>
+									</ul>
+								</div>
+
+								<a class="search__result-all" href="#">Все результаты поиска</a>
+							</div>
+
+						</div>
 		</div>
  					<ul class="breadcrumbs"><li><a href="/">Главная</a></li><li>Оптовикам</li></ul>		 
 					<div class="text-b">

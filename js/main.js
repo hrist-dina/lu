@@ -92,6 +92,11 @@ $(function() {
 			'top': h+'px'
 		}).stop(true,true).fadeIn(400);
 	}
+
+	$('.js-basket-scroll').jScrollPane();
+	$('.js-select').select2({
+		minimumResultsForSearch: Infinity
+	});
 });
 
 $('[name=phone]').inputmask("+7 (999) 999-99-99");
