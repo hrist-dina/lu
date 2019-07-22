@@ -1,0 +1,10 @@
+.hiden_location, .bx-soa-reference {
+ 	display: none !important;
+ }
+[data-target="minimalOrder"] p a {
+	font-weight: bold;
+}
+[data-target="minimalOrder"] p {
+	font-size: 14px;
+    line-height: 20px;
+}
