@@ -583,8 +583,12 @@ header .basket p a:hover {
 	box-sizing: border-box;
 	border-bottom: 1px solid #72AD75;
 }
+.menu .search__items .jspContainer {
+	width: 100% !important;
+}
 
 .menu .search__items {
+	width: 100% !important;
 	margin: 0;
 	height: 529px;
 	overflow-y: auto;
